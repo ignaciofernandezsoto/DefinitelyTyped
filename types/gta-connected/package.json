@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "name": "@types/gta-connected",
+    "version": "1.0.0",
+    "projects": [
+        "https://gtaconnected.com/"
+    ],
+    "devDependencies": {
+        "@types/gta-connected": "workspace:."
+    },
+    "owners": [
+        {
+            "name": "Ignacio Javier Fernández Soto",
+            "githubUsername": "ignaciofernandezsoto"
+        }
+    ]
+}
