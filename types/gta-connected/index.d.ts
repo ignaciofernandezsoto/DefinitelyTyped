@@ -1,20 +1,8 @@
 import {EventName as ClientEventName} from "./client";
 import {EventName as ServerEventName} from "./server";
+import {Element} from "./element";
 
 export type Client = unknown // TODO
-
-export type Element = Blip | Entity | Marker | Pickup // TODO
-export type Blip = unknown // TODO
-export type Entity = Building | Physical // TODO
-export type Building = unknown // TODO
-export type Physical = _Object | Ped | Vehicle // TODO
-export type _Object = unknown // TODO
-export type Ped = Player // TODO
-export type Player = unknown // TODO
-export type Vehicle = Train // TODO
-export type Train = unknown // TODO
-export type Marker = unknown // TODO
-export type Pickup = unknown // TODO
 
 export type Event = CancellableEvent | KeyEvent
 export type CancellableEvent = unknown

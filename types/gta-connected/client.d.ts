@@ -3,7 +3,7 @@ import {NetworkEventName as SharedNetworkEventName} from "./index";
 /**
  * @see https://wiki.gtaconnected.com/Client/Events
  */
-type EventName = CameraEventName | ChatEventName | CursorEventName | DodoEventName | ElementEventName | EntityEventName | FocusEventName | GuiEventName | HudEventName | KeyEventName | MouseEventName | NetworkEventName | PedEventName | PickupEventName | ProcessEventName | RenderEventName | ResourceEventName | StreamingEventName | VehicleEventName
+export type EventName = CameraEventName | ChatEventName | CursorEventName | DodoEventName | ElementEventName | EntityEventName | FocusEventName | GuiEventName | HudEventName | KeyEventName | MouseEventName | NetworkEventName | PedEventName | PickupEventName | ProcessEventName | RenderEventName | ResourceEventName | StreamingEventName | VehicleEventName
 
 type CameraEventName = "OnBeforeProcessCamera" | "OnCameraProcess"
 type ChatEventName = "OnChatOutput"

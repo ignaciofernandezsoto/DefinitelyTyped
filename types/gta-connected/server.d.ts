@@ -1,9 +1,10 @@
 import {Client, NetworkEventName} from "./index";
+import {Element as SharedElement} from "./element";
 
 /**
  * @see https://wiki.gtaconnected.com/Server/Events
  */
-type EventName = ElementEventName | PedEventName | PickupEventName | PlayerEventName | ProcessEventName | ResourceEventName | ServerEventName;
+export type EventName = ElementEventName | PedEventName | PickupEventName | PlayerEventName | ProcessEventName | ResourceEventName | ServerEventName;
 
 type ElementEventName = "OnElementDestroy" | "OnElementStreamIn" | "OnElementStreamOut"
 type PedEventName = "OnPedCrouch" | "OnPedEnterVehicle" | "OnPedExitVehicle" | "OnPedFall" | "OnPedJump" | "OnPedSpawn" | "OnPedUncrouch" | "OnPedWasted"
@@ -12,6 +13,10 @@ type PlayerEventName = "OnPlayerChat" | "OnPlayerCommand" | "OnPlayerConnect" | 
 type ProcessEventName = "OnProcess"
 type ResourceEventName = "OnResourceStart" | "OnResourceStop"
 type ServerEventName = "OnServerStart"
+
+export interface Element extends SharedElement {
+    dimension: number
+}
 
 /**
  * The `triggerNetworkEvent` function is used to trigger a custom network event.
