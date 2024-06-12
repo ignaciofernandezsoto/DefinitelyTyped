@@ -16,14 +16,37 @@ export type Vehicle = Train // TODO
 export type Train = unknown // TODO
 export type Marker = unknown // TODO
 
-export interface Element {
-    readonly type: ElementType
+export type Vec3 = unknown // TODO
+
+export interface NetFlags { // TODO https://wiki.gtaconnected.com/NetFlags
+
 }
 
-export type PickupType = GTA_III.PickupType | GTA_VC.PickupType | GTA_SA.PickupType
+export type ClientID = number
+
+export interface Element {
+    readonly type: ElementType
+    getData: (dataName: string) => any
+    getRotation: (dataName: string) => Vec3
+    readonly id: number
+    isCreatedFor: unknown,
+    readonly isOwner: boolean
+    isType: (elementType: ElementType) => boolean
+    name: string
+    readonly netFlags: NetFlags
+    parent: Element
+    position: Vec3
+    removeAllData: () => void
+    removeData: (dataName: string) => void
+    rotation: Vec3
+    setData: (dataName: string, data: any, syncWithClientsNow: boolean) => void
+    readonly streamInDistance: number
+    readonly streamOutDistance: number
+    syncer: ClientID
+    syncerId: unknown
+    readonly children: Element[]
+}
 
 export interface Pickup {
-    quantity: number
-    readonly collected: boolean
-    pickupType: PickupType
+
 }

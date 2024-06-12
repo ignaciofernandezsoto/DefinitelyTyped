@@ -1,4 +1,9 @@
-import {NetworkEventName as SharedNetworkEventName} from "./index";
+import {Client, NetworkEventName as SharedNetworkEventName} from "./index";
+import {Element as SharedElement, Pickup as SharedPickup} from "./element";
+import {GtaConnectedLibraryTypes} from "./gta-connected-library-types";
+import GTA_III = GtaConnectedLibraryTypes.GTA_III;
+import GTA_VC = GtaConnectedLibraryTypes.GTA_VC;
+import GTA_SA = GtaConnectedLibraryTypes.GTA_SA;
 
 /**
  * @see https://wiki.gtaconnected.com/Client/Events
@@ -24,6 +29,23 @@ type RenderEventName = "OnPostRender2D" | "OnPreRender" | "OnRender" | "OnRender
 type ResourceEventName = "OnResourceReady" | "OnResourceStart" | "OnResourceStop"
 type StreamingEventName = "OnStreamingMapLevelChange"
 type VehicleEventName = "OnVehicleExplode"
+
+export interface Element extends SharedElement {
+    readonly isLocal: boolean
+    readonly isSyncer: boolean
+}
+
+type PickupModelIndex = unknown // TODO
+
+export type PickupType = GTA_III.PickupType | GTA_VC.PickupType | GTA_SA.PickupType
+
+export interface Pickup extends SharedPickup {
+    quantity: number
+    readonly collected: boolean
+    pickupType: PickupType
+    modelIndex: PickupModelIndex
+}
+
 
 /**
  * The `isConnecting` variable is used to fetch the status of connecting to a server, for the local client.

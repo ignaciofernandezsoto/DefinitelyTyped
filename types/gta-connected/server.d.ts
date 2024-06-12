@@ -1,5 +1,5 @@
 import {Client, NetworkEventName} from "./index";
-import {Element as SharedElement} from "./element";
+import {ClientID, Element as SharedElement} from "./element";
 
 /**
  * @see https://wiki.gtaconnected.com/Server/Events
@@ -14,8 +14,15 @@ type ProcessEventName = "OnProcess"
 type ResourceEventName = "OnResourceStart" | "OnResourceStop"
 type ServerEventName = "OnServerStart"
 
+export type Resource = unknown // TODO
+
 export interface Element extends SharedElement {
     dimension: number
+    existsFor: (client: Client) => boolean
+    resource: Resource
+    setExistsFor: (client: Client, exists: boolean) => boolean
+    setSyncer: (clientId: ClientID, forced?: boolean) => void
+    clearExistsFor: () => void
 }
 
 /**
