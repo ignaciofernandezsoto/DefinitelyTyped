@@ -1,5 +1,6 @@
-// Namespace name is to ensure no collisions to global variable happens
 export namespace GtaConnectedLibraryTypes {
+
+    export type PickupType = GTA_III.PickupType | GTA_VC.PickupType | GTA_SA.PickupType
 
     export enum ElementType {
         ELEMENT_BLIP = 258,
